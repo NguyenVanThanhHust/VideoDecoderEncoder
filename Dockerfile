@@ -99,7 +99,6 @@ RUN make install
 WORKDIR /opt/ffmpeg/
 RUN echo "export PATH=$PATH:/usr/local/cuda/bin" >> ~/.bashrc
 RUN apt-get install -y libxvidcore-dev
-RUN apt install -y libssl-dev
 RUN ./configure --nvccflags="-gencode arch=compute_75,code=sm_75 -O2" \
     --extra-cflags=-I/usr/local/cuda/include \
     --extra-ldflags=-L/usr/local/cuda/lib64 \
@@ -212,10 +211,6 @@ RUN apt-get install -y zlib1g-dev
 RUN apt-get install -y curl libcurl4-openssl-dev libcurlpp-dev
 RUN apt-get install -y libinih-dev
 
-# Aws sdk cpp 
-RUN apt-get install -y libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev libpulse-dev
-WORKDIR /opt/
- 
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES video,compute,utility
 
