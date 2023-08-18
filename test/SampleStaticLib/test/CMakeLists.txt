@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 project(sample LANGUAGES CXX)
 
+
 set(CMAKE_BUILD_TYPE "Release")
 set(OpenGL_GL_PREFERENCE  GLVND)
 add_definitions("-DENABLE_SSE")
@@ -22,6 +23,6 @@ add_executable(${PROJECT_NAME}
     )
 
 target_link_libraries(${PROJECT_NAME}
-    libsample_lib.a
+    sample_static_lib
 )
         

@@ -18,7 +18,6 @@ add_executable(${PROJECT_NAME}
 
 include_directories(
     ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
-    "../../include/decoder"
     /usr/local/include/
 )
 
